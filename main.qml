@@ -1,27 +1,31 @@
+/*
+ * first steps see:
+ * http://doc.qt.io/qt-4.8/qdeclarativeintroduction.html
+ *
+ * basic elements see: http://doc.qt.io/qt-4.8/qdeclarativeelements.html
+ *
+*/
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+import "."
 
 ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: "Hello World"
 
-    SwipeView {
-        id: swipeView
-        anchors.fill: parent
-        currentIndex: tabBar.currentIndex
-
-        Page1 {
-        }
-
-        Page {
-            Label {
-                text: qsTr("Second page")
-                anchors.centerIn: parent
-            }
-        }
+    Text{
+        text:txtInpt1.text
+        font.family: "Helvetica"
+        font.pointSize: 24
+        opacity: 0.5
+    }
+    TextInput{
+        id: txtInpt1
+        width: 60
+        color: Style.mainbg // comes from Style.qml
     }
 
     footer: TabBar {
