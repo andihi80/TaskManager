@@ -1,13 +1,15 @@
-import QtQuick 2.0
+import QtQuick 2.7
 
 Item {
     id: container
     property alias cellColor: rectangle.color
     signal clicked(color cellColor)
 
+    height: 25; width: 40
+
     Rectangle{
-        id:rectangle
-        border.color:"white"
+        id: rectangle
+        color:"white"
         anchors.fill: parent
     }
 
