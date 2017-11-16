@@ -16,11 +16,13 @@ ApplicationWindow {
     width: 640
     height: 480
     title: "Hello World"
+
     Rectangle{
         id: rect
         anchors.fill: parent
 
         Column{
+            anchors.top: rect.top; anchors.topMargin: 4
             TextInput {
                 id: txtInpt1
                 width:100
@@ -33,8 +35,9 @@ ApplicationWindow {
                 font.family: "Helvetica"
                 font.pointSize: 24
                 opacity: 0.5
-            }
+            }            
         }
+
         Grid{
             id:colorGrid
             x:4; anchors.bottom: rect.bottom; anchors.bottomMargin: 4;
@@ -50,21 +53,8 @@ ApplicationWindow {
     }
 
 
+
 /*
-    Grid{
-        id:colorGrid
-        x:4; anchors.top: appWindow.top; anchors.topMargin: 4;
-        rows: 3; columns: 3; spacing: 3
-        Row
-
-        Cell { cellColor: "red"; onClicked: helloText.color = cellColor }
-        Cell { cellColor: "green"; onClicked: helloText.color = cellColor }
-        Cell { cellColor: "blue"; onClicked: helloText.color = cellColor }
-        Cell { cellColor: "yellow"; onClicked: helloText.color = cellColor }
-        Cell { cellColor: "steelblue"; onClicked: helloText.color = cellColor }
-        Cell { cellColor: "black"; onClicked: helloText.color = cellColor }
-    }
-
     Text{
         text:txtInpt1.text
         font.family: "Helvetica"
@@ -76,10 +66,22 @@ ApplicationWindow {
         width: 60
         color: Style.mainbg // comes from Style.qml
     }
+
+    Grid{
+        id:colorGrid
+        x:4; anchors.top: appWindow.top; anchors.topMargin: 4;
+        rows: 3; columns: 3; spacing: 3
+
+        Cell { cellColor: "red"; onClicked: helloText.color = cellColor }
+        Cell { cellColor: "green"; onClicked: helloText.color = cellColor }
+        Cell { cellColor: "blue"; onClicked: helloText.color = cellColor }
+        Cell { cellColor: "yellow"; onClicked: helloText.color = cellColor }
+        Cell { cellColor: "steelblue"; onClicked: helloText.color = cellColor }
+        Cell { cellColor: "black"; onClicked: helloText.color = cellColor }
+    }
 */
     footer: TabBar {
-        id: tabBar
-        currentIndex: swipeView.currentIndex
+        id: tabBar        
         TabButton {
             text: qsTr("First")
         }
