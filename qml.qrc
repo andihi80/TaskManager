@@ -6,5 +6,6 @@
         <file>qtquickcontrols2.conf</file>
         <file>Style.qml</file>
         <file>qmldir</file>
+        <file>Cell.qml</file>
     </qresource>
 </RCC>
